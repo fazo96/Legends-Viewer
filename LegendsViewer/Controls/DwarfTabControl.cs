@@ -161,8 +161,8 @@ namespace LegendsViewer
         {
             base.OnFontChanged(e);
             IntPtr hFont = this.Font.ToHfont();
-            SendMessage(this.Handle, WM_SETFONT, hFont, new IntPtr(-1));
-            SendMessage(this.Handle, WM_FONTCHANGE, IntPtr.Zero, IntPtr.Zero);
+            //SendMessage(this.Handle, WM_SETFONT, hFont, new IntPtr(-1));
+            //SendMessage(this.Handle, WM_FONTCHANGE, IntPtr.Zero, IntPtr.Zero);
             this.UpdateStyles();
         }
 
@@ -176,7 +176,7 @@ namespace LegendsViewer
         {
             base.OnMouseMove(e);
             TCHITTESTINFO HTI = new TCHITTESTINFO(e.X, e.Y);
-            HotTabIndex = SendMessage(this.Handle, TCM_HITTEST, IntPtr.Zero, ref HTI);
+            //HotTabIndex = SendMessage(this.Handle, TCM_HITTEST, IntPtr.Zero, ref HTI);
 
             if (e.Button != MouseButtons.Left) return;
 
