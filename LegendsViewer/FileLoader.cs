@@ -216,10 +216,10 @@ namespace LegendsViewer
         {
             string region = "";
             if (xmlFile.LastIndexOf("-") > 0)
-                region = xmlFile.Substring(xmlFile.LastIndexOf("\\") + 1, xmlFile.LastIndexOf("-") - xmlFile.LastIndexOf("\\") - 1);
+                region = xmlFile.Substring(xmlFile.LastIndexOf("/") + 1, xmlFile.LastIndexOf("-") - xmlFile.LastIndexOf("/") - 1);
             else
                 return;
-            string directory = xmlFile.Substring(0, xmlFile.LastIndexOf("\\") + 1);
+            string directory = xmlFile.Substring(0, xmlFile.LastIndexOf("/") + 1);
 
             if (File.Exists(directory + region + "-world_history.txt"))
             {
